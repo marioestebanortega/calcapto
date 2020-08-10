@@ -1,4 +1,43 @@
-body{
+
+html, body{
+    overflow: auto;
+    padding: 0;
     margin: 0;
-    background-color: red;
+  }
+body{
+    display: block;
+    background-color: black;
+    font-family: 'Meera Inimai', sans-serif;
+  
 }
+
+body::after {
+    content: "";
+    background-image: url('../images/mortgage2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+  }
+
+  .container {
+    /* border: 1px solid red; */
+    /*max-width: 1000px;*/
+    padding: 0 1em;
+    max-width: 1800px;
+    flex: 1;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+    flex-direction: inherit;
+
+  }

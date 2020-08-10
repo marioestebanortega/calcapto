@@ -1,0 +1,68 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imgContainer{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+
+.imgContainer img{
+    width: 90%;
+    transition: 1s;
+}
+
+.imgContainer img:hover{
+    width: 100%;
+
+}
+
+.menu{
+ width: 70%;
+
+}
+.menu ol{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style:none;
+
+    height: 100%;
+    margin:0;
+    padding: 0;
+}
+
+.menu ol li{
+  height: inherit;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.menu ol li a{
+    background-color: transparent;
+    display: flex;
+    height: inherit;
+    color: white;
+    text-decoration: none;
+    padding:0 0.4em 0 0.4em;
+    margin: 0 1em 0 0.5em;
+    align-items: center;
+    transition: 0.5s;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  .menu ol li a:hover{
+    background-color: white;
+    color: black;
+  }
+  
+  .menu ol li a:focus {
+    background: #0050A0;
+    color: black;
+  }

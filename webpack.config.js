@@ -39,7 +39,16 @@ module.exports={
                   // Compiles Sass to CSS
                   'sass-loader',
                 ],
-              }
+              },
+              {
+                test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+                use: {
+                  loader: 'url-loader',
+                  options: {
+           
+                  }
+                }
+              },
         ]
     },
     plugins:[

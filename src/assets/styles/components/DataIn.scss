@@ -1,0 +1,66 @@
+.DataIn{
+    display: flex;
+    justify-content: center;
+    padding-top:2em;
+    padding-bottom: 4em;
+}
+.formData{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.inits{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    background-color: white;
+    width: 45%;
+    padding-top:2em;
+    padding-bottom: 0;
+    border-radius: 1em;
+    opacity: 0.9;
+}
+.inits h1{
+    font-size: 2.2em;
+    color:#0050A0;
+    font-weight: 900;
+    border-bottom:3px solid #0050A0;
+    margin-bottom:2em;
+}
+.inits label{
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+    font-weight: bold;
+ }
+
+.inits input{
+    margin-bottom: 2em;
+    font-size: 1em;
+ }
+
+ .calcs{
+     padding-top:1em;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+
+ .calcData{
+     width: 20%;
+     border-radius: 1em;
+     font-size: 1em;
+     font-weight: bold;
+     color:white;
+     background-color: #0050A0;
+     margin:1em;
+     height: 2em;
+     border: 0;
+     transition: 0.5s;
+ }
+ .calcData:hover{
+     background-color: #73AC5E;
+     color: black;
+ }
