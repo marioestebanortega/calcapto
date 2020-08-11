@@ -1,0 +1,13 @@
+{
+  "jCreditForm": {
+    "vProperties": 400000000,
+    "nMonths": 12,
+    "nRateAn":11,
+    "tIntRate": 30,
+    "nNMonths": 20
+  },
+  "jAddValues":{
+    "addCredit": 0,
+    "addIni":0
+  }
+}

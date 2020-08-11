@@ -1,0 +1,40 @@
+@keyframes appears-card {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+.about-personal-data{
+background-color: transparent;
+display: flex;
+background-color: transparent;
+margin-top:4em;
+margin-bottom: 12em;
+justify-content: center;
+animation-name: appears-card;
+animation-duration: 1s;
+}
+.hero-card {
+    border-radius: 1em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-bottom:5vh;
+  }
+
+  .hero-card img{
+width: 60%;
+height: 190px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .hero-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .hero-detail {
+   text-align: center;
+  }

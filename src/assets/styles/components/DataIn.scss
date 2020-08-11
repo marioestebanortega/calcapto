@@ -1,44 +1,60 @@
+@keyframes appears-dataIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+.formData{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
 .DataIn{
     display: flex;
     justify-content: center;
     padding-top:2em;
     padding-bottom: 4em;
+    animation-name: appears-dataIn;
+    animation-duration: 1s;
 }
-.formData{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 50%;
-}
-
 .inits{
     display: flex;
     flex-direction: column;
 
     align-items: center;
     background-color: white;
-    width: 45%;
+    width: 25%;
     padding-top:2em;
-    padding-bottom: 0;
+    padding-bottom: 1em;
     border-radius: 1em;
-    opacity: 0.9;
+    
+
+}
+.inits hr{
+    width: 90%;
+    border-top:3px solid #000716;
 }
 .inits h1{
+    margin-top: 0;
     font-size: 2.2em;
     color:#0050A0;
     font-weight: 900;
     border-bottom:3px solid #0050A0;
-    margin-bottom:2em;
+    margin-bottom:1em;
 }
 .inits label{
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
     font-size: 1.3em;
     font-weight: bold;
+    text-align: center;
  }
 
 .inits input{
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     font-size: 1em;
+    text-align: center;
+    background-color: white;
+    border:1px solid black;
+    border-radius: 2em;
  }
 
  .calcs{
@@ -51,7 +67,7 @@
  .calcData{
      width: 20%;
      border-radius: 1em;
-     font-size: 1em;
+     font-size: 1.5em;
      font-weight: bold;
      color:white;
      background-color: #0050A0;
@@ -64,3 +80,32 @@
      background-color: #73AC5E;
      color: black;
  }
+ .footer-first strong{
+     color: #0050A0;
+     font-size: bold;
+ }
+
+ //tabla
+ .tableData{
+    border-spacing: 0px;
+    width: 100%;
+    padding: 1em;
+    font-size: 0.8em;
+    text-align: center;
+ }
+
+
+ .tableData tr th{
+     border: 1px solid black;
+     padding:0.1em;
+     background-color: #B5D6DC;
+     width: 40%;
+     
+ }
+ .tableData tr td{
+    border: 1px solid black;
+    padding:0.5em;
+}
+.vcRight{
+    width: 60%;
+}

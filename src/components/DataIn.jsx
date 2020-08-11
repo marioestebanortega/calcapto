@@ -1,47 +1,47 @@
-import React from 'react'
-import '../assets/styles/components/DataIn.scss'
+import React,{useState} from "react";
+import "../assets/styles/components/DataIn.scss";
+import Results from "./Results";
+import CreditForm from "./CreditForm";
+import AddValues from "./AddValues";
 
-const DataIn=()=>{
-return  (
-<section className="DataIn">
-    <div className="container">
-<form className="formData" action="/action_page.php">    
-<div className="inits">
-    <h1>Datos</h1>
-<label for="vPropertie">Valor del inmueble</label>
-<input type="text" id="vPropertie" placeholder="Your name.."/>
 
-<label for="nMonths">Numero de meses</label>
-<input type="text" id="nMonths"  placeholder="Your last name.."/>
 
-<label for="pInitAccount">Porcentaje cuota inicial</label>
-<input type="text" id="pInitAccount"  placeholder="Your last name.."/>
+const DataIn = () => {
 
-<label for="tIntRate">Porcentaje cuota inicial</label>
-<input type="text" id="tIntRate"  placeholder="Your last name.."/>
+  
+  const calcVals=(e)=>{
+    e.preventDefault();
+ 
+  let result={
+    valCredit:5,
+    valAcc: 200,
+    valIni:100,
+    valMIni:130,
+    valMenIni:123,
+    valEscrit:456,
+    valSeg:346,
+    valEscritSeg:234
+ }
 
-<label for="nNMonths">Meses cuota inicial</label>
-<input type="text" id="nNMonths"  placeholder="Your last name.."/>
+ setFormCalcs(result);
+  }
 
-<label for="nNMonths">Meses cuota inicial</label>
-<input type="text" id="nNMonths"  placeholder="Your last name.."/>
-</div>
-
-<div className="inits">
-<h1>Abonos</h1>
-<label for="addCredit">Abono crédito</label>
-<input type="text" id="addCredit"  placeholder="Your last name.."/>
-
-<label for="addIni">Abono cuota inicial</label>
-<input type="text" id="addIni"  placeholder="Your last name.."/>
-</div>
-
-<div className="calcs">
-<input className="calcData" type="submit" value="Calcular"/>
-</div>
-</form>
-</div>
-</section>)
-}
+ const [formCals,setFormCalcs]=useState({});
+  return (
+    <section className="DataIn">
+      <div className="container">
+        <form className="formData" onSubmit={calcVals}>
+          <CreditForm />
+          <AddValues />
+          <Results data={formCals}/>
+          <div className="calcs">
+            <button className="calcData"  >Calcular
+              </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+};
 
 export default DataIn;
