@@ -3,37 +3,35 @@ import "../assets/styles/components/DataIn.scss";
 import Results from "./Results";
 import CreditForm from "./CreditForm";
 import AddValues from "./AddValues";
+import { connect } from "react-redux";
+import {calcAllData} from '../services/calcaptoServices'
+import {calcVals} from '../actions/actions'
 
 
 
-const DataIn = () => {
+const DataIn = (props) => {
 
-  
-  const calcVals=(e)=>{
+
+
+  //const formCals=data.result;
+  const calcAll=(e)=>{
+
     e.preventDefault();
- 
-  let result={
-    valCredit:5,
-    valAcc: 200,
-    valIni:100,
-    valMIni:130,
-    valMenIni:123,
-    valEscrit:456,
-    valSeg:346,
-    valEscritSeg:234
- }
+  
+   const result=calcAllData(props.data);
 
- setFormCalcs(result);
+    props.calcVals(result)
+
   }
 
- const [formCals,setFormCalcs]=useState({});
+ //const [formCals,setFormCalcs]=useState({});
   return (
     <section className="DataIn">
       <div className="container">
-        <form className="formData" onSubmit={calcVals}>
+        <form className="formData" onSubmit={calcAll}>
           <CreditForm />
           <AddValues />
-          <Results data={formCals}/>
+          <Results/>
           <div className="calcs">
             <button className="calcData"  >Calcular
               </button>
@@ -44,4 +42,13 @@ const DataIn = () => {
   );
 };
 
-export default DataIn;
+const mapStateToProps=(state)=>{
+  return {
+    data:state
+  }
+}
+
+const mapActionsToProps={
+  calcVals,
+}
+export default connect(mapStateToProps,mapActionsToProps)(DataIn);

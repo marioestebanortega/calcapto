@@ -1,10 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 
 const Results = (props) =>{
+
   const data=props.data;
     return (<>
-    {data&&<div className="inits">
+    <div className="inits">
         <h1>Calculos</h1>
         <table className="tableData">
         <tbody>
@@ -23,7 +25,7 @@ const Results = (props) =>{
             <th colSpan="2">Cuota inicial</th>
           </tr>
           <tr>
-            <td>Valor restante de la cuota inicial</td>
+            <td>Valor cuota inicial</td>
             <td className="vcRight">{data.valIni}</td>
           </tr>
           <tr>
@@ -51,9 +53,19 @@ const Results = (props) =>{
           </tr>
           </tbody>
         </table>
-      </div>}
+      </div>
       </>
     )
 }
 
-export default Results;
+const mapStateToProps=(state)=>{
+
+  return {
+    data:state.result
+  }
+}
+
+const mapActionsToProps={
+
+}
+export default connect(mapStateToProps,mapActionsToProps) (Results);

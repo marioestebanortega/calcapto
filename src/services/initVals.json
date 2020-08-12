@@ -1,7 +1,7 @@
 {
   "jCreditForm": {
-    "vProperties": 400000000,
-    "nMonths": 12,
+    "vProperties": 270000000,
+    "nMonths": 180,
     "nRateAn":11,
     "tIntRate": 30,
     "nNMonths": 20
@@ -9,5 +9,15 @@
   "jAddValues":{
     "addCredit": 0,
     "addIni":0
-  }
+  },
+  "result": {
+    "valCredit":0,
+    "valAcc": 0,
+    "valIni":0,
+    "valMIni":0,
+    "valMenIni":0,
+    "valEscrit":0,
+    "valSeg":0,
+    "valEscritSeg":0
+ }
 }
