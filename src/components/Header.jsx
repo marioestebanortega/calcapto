@@ -1,13 +1,17 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import '../assets/styles/components/Header.scss'
 import { Link } from 'react-router-dom'
+import {execMenu} from './menuactions.js'
 
 
 
 const Header =()=>{
 
-
-    return( 
+    useEffect(()=>{
+        execMenu();
+    },[])
+    return( <>
+        <i className="icon-menu burger-button" id="burger-menu"></i>
     <section className="header">
         <div className="container">
         <div className="imgContainer">
@@ -37,6 +41,7 @@ const Header =()=>{
         </nav>
         </div>
     </section>
+    </>
     )
 }
 

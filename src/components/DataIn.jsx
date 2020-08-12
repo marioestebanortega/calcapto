@@ -25,12 +25,13 @@ const DataIn = (props) => {
    const result=calcAllData(props.data);
 
     props.calcVals(result)
+    location.href = "#inits"
 
   }
 
  //const [formCals,setFormCalcs]=useState({});
   return (
-    <section className="DataIn">
+    <section className="DataIn" >
       <div className="container">
         <form className="formData" onSubmit={calcAll}>
           <CreditForm />
@@ -39,6 +40,11 @@ const DataIn = (props) => {
           <div className="calcs">
             <button className="calcData"  >Calcular
               </button>
+            
+
+              <button className="icon-exec icon-calculator1"  >
+              </button>
+             
           </div>
         </form>
       </div>

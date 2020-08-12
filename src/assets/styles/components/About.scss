@@ -15,18 +15,21 @@ animation-duration: 1s;
 }
 .hero-card {
     border-radius: 1em;
-    background-color: white;
+    background-color: #000716;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 20%;
     margin-bottom:5vh;
+    padding-top: 1em;
+    opacity: 0.8;
   }
 
   .hero-card img{
-width: 60%;
-height: 190px;
+width: 50%;
+height: 150px;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -38,3 +41,26 @@ height: 190px;
   .hero-detail {
    text-align: center;
   }
+
+
+  @media screen and (max-width: 1024px) {
+
+  }
+  
+  @media screen and (max-width: 767px) {
+   .hero-card{
+     width: 70%;
+     padding: 2em;
+   }
+        
+  }
+  @media screen and (max-width: 480px) {
+  
+  }
+  
+  @media screen and (max-width: 320px) {
+  
+  }
+  
+    
+  

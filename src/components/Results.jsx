@@ -6,7 +6,7 @@ const Results = (props) =>{
 
   const data=props.data;
     return (<>
-    <div className="inits">
+    <div className="inits" id="inits">
         <h1>Calculos</h1>
         <table className="tableData">
         <tbody>
