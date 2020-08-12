@@ -13,14 +13,21 @@
 }
 
 
-.imgContainer img{
+.logo-image{
+    font-size: 2em;
     width: 90%;
     transition: 1s;
 }
 
-.imgContainer img:hover{
-    width: 100%;
+.logo-image:hover{
+    font-size: 2.1em;
 
+}
+.logo-image h1{
+    padding: 0;
+    margin: 0;
+    color: #000716 ;
+    font-family: 'Permanent Marker';
 }
 
 .menu{
@@ -37,6 +44,7 @@
     margin:0;
     padding: 0;
 }
+
 
 .menu ol li{
   height: inherit;
@@ -62,7 +70,3 @@
     color: black;
   }
   
-  .menu ol li a:focus {
-    background: #0050A0;
-    color: black;
-  }

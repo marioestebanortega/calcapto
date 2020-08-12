@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './assets/styles/components/Contact.scss'
+import {applyActiveLink} from './services/calcaptoServices'
 
 
 const Contact = () =>{
+    useEffect(()=>{
+        applyActiveLink(3,3);
+      },[]);
 return(
     <section className="contact">
         <div className="container">

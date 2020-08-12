@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import '../assets/styles/components/About.scss'
 import hero from '../assets/images/Hero.jpg'
+import {applyActiveLink} from '../services/calcaptoServices'
 
 
 const About =()=>{
+  useEffect(()=>{
+    applyActiveLink(2,3);
+  },[]);
+
 return <section className="about-personal-data">
 <div className="hero-card">
   <img src={hero}/>

@@ -14,7 +14,7 @@ body{
 
 body::after {
     content: "";
-    background-image: url('../images/mortgage2.jpg');
+    background-image: url('../images/mortgage5.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -41,4 +41,10 @@ body::after {
     flex-wrap: inherit;
     flex-direction: inherit;
 
+  }
+
+    
+  .active-link{
+    background-color: #0050A0 !important;
+    color: white !important;
   }

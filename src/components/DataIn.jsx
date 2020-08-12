@@ -1,23 +1,27 @@
-import React,{useState} from "react";
+import React,{useEffect} from "react";
 import "../assets/styles/components/DataIn.scss";
 import Results from "./Results";
 import CreditForm from "./CreditForm";
 import AddValues from "./AddValues";
 import { connect } from "react-redux";
-import {calcAllData} from '../services/calcaptoServices'
+import {calcAllData,applyActiveLink} from '../services/calcaptoServices'
 import {calcVals} from '../actions/actions'
+
 
 
 
 const DataIn = (props) => {
 
-
+  useEffect(()=>{
+    applyActiveLink(1,3);
+  },[]);
+  
 
   //const formCals=data.result;
   const calcAll=(e)=>{
 
     e.preventDefault();
-  
+
    const result=calcAllData(props.data);
 
     props.calcVals(result)

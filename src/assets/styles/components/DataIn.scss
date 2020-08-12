@@ -16,6 +16,7 @@
     animation-name: appears-dataIn;
     animation-duration: 1s;
 }
+
 .inits{
     display: flex;
     flex-direction: column;
@@ -55,7 +56,14 @@
     background-color: white;
     border:1px solid black;
     border-radius: 2em;
+
  }
+
+ .inits input:focus{
+    outline: none;
+    background-color: rgba(0,0,0,0.1);
+    transition:1s;
+}
 
  .calcs{
      padding-top:1em;
@@ -80,6 +88,9 @@
      background-color: #73AC5E;
      color: black;
  }
+ .calcData:focus{
+    outline: none;
+}
  .footer-first strong{
      color: #0050A0;
      font-size: bold;
