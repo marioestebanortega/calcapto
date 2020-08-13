@@ -21,14 +21,14 @@ const onChangeFormCredit=(e)=>{
     return ( <div className="inits">
     <h1>Datos</h1>
    
-    <label htmlFor="vPropertie">Valor del inmueble</label>
+    <label htmlFor="vPropertie">($) Valor del inmueble</label>
     <input type="text" id="vProperties"  defaultValue={formCreditForm.vProperties} onBlur={onEvent}  onChange={onChangeFormCredit} placeholder="Ejemplo: $400.000.000.00" />
 
     <label htmlFor="nMonths">Numero de meses</label>
     <input type="text" id="nMonths" defaultValue={formCreditForm.nMonths} onChange={onChangeFormCredit} placeholder="Ejemplo: 5"/>
     <div className="label-switch">
      <Switch id='tipoTasa' setVisible={props.setVisible} prop1='anual' prop2='month' fun={props.setRateType} ini={props.rateType}/>
-<label htmlFor="nRateAn">{props.rateType==='anual'?'Tasa Anual':'Tasa mensual'}</label>
+<label htmlFor="nRateAn">{props.rateType==='anual'?'(%)Tasa Anual':'(%)Tasa mensual'}</label>
 </div>
     <input type="text" id="nRateAn" defaultValue={formCreditForm.nRateAn} onChange={onChangeFormCredit} placeholder="Ejemplo: 12%" />
     <div className="label-switch">
@@ -39,7 +39,7 @@ const onChangeFormCredit=(e)=>{
     <hr/>
  
 
-    <label htmlFor="tIntRate">Porcentaje cuota inicial</label>
+    <label htmlFor="tIntRate">(%)Porcentaje cuota inicial</label>
     <input type="text" id="tIntRate"   defaultValue={formCreditForm.tIntRate} onChange={onChangeFormCredit} placeholder="Ejemplo: 30%" />
 
     <label htmlFor="nNMonths">Meses cuota inicial</label>

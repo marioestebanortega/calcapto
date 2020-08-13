@@ -19,11 +19,11 @@ const AddValues = (props) => {
   return (
     <div className="inits">
       <h1>Abonos</h1>
-      <label htmlFor="addCredit">Abono crédito</label>
+      <label htmlFor="addCredit">($)Abono crédito</label>
       <input type="text" id="addCredit" placeholder="Ejemplo: 40"  defaultValue={formAddForm.addCredit} onBlur={onEvent} onChange={onChangeFormCredit}/>
 
       {props.withAccInit==='yes'?<>
-      <label htmlFor="addIni">Abono cuota inicial</label>
+      <label htmlFor="addIni">($)Abono cuota inicial</label>
       <input type="text" id="addIni" placeholder="Ejemplo: 30"  defaultValue={formAddForm.addIni} onBlur={onEvent} onChange={onChangeFormCredit} />
       </>:<></>}
     </div>
