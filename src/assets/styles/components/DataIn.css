@@ -153,6 +153,7 @@
 .icon-exec {
     font-size: 2.5em;
     margin:0;
+    padding: 0;
 
     position: fixed;
     left: 0;
@@ -162,19 +163,16 @@
     border: none;
     outline: none;
     color: white;
-    margin-left: -2vw;
+    margin-left: 0.1em;
+
 }
 }
 @media screen and (max-width: 480px) {
-    .icon-exec {
-        margin-left: -1vw;
-    }
+   
 
 }
 
 @media screen and (max-width: 320px) {
-    .icon-exec {
-        margin-left: -1vw;
-    }
+   
 }
 
