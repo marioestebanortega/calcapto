@@ -17,6 +17,19 @@
   }
 }
 
+.label-switch{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.label-switch label{
+  margin-left: 1em;
+ }
+
+
+
+
+
 .icon-exec {
   display: none;
 }
@@ -164,8 +177,10 @@
   }
 
   @keyframes high-buttom {
-    from {color: white;}
-    to {color: #0050a0;}
+    from {opacity: 0.2;
+  }
+    to {opacity: 1;
+    }
   }
   .icon-exec {
     font-size: 2.5em;

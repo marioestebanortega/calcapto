@@ -12,6 +12,8 @@ import {calcVals,setVisible} from '../actions/actions'
 
 const DataIn = (props) => {
   let visible=props.data.visible;
+  const rateType=props.data.params.rateType;
+  const withAccInit=props.data.params.withAccInit;
   useEffect(()=>{
     applyActiveLink(1,3);
   },[]);
@@ -22,12 +24,11 @@ const DataIn = (props) => {
     e.preventDefault();
     props.setVisible(1);
     visible=props.data.visible;
-    console.log('visible:',props.visible)
     const elementCalc=document.getElementById('icon-anim');
     elementCalc.classList.add('icon-exec-ok');
     elementCalc.classList.remove('icon-exec-anim');
 
-   const result=calcAllData(props.data);
+   const result=calcAllData(props.data,rateType,withAccInit);
 
     props.calcVals(result)
     location.href = "#inits"
@@ -39,6 +40,7 @@ const DataIn = (props) => {
     <section className="DataIn" >
       <div className="container">
         <form className="formData" onSubmit={calcAll}>
+         
           <CreditForm />
           <AddValues />
           {visible===1&&<Results/>}

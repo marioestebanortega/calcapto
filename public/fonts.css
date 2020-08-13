@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./fonts/icomoon.eot?hzbnkn');
-  src:  url('./fonts/icomoon.eot?hzbnkn#iefix') format('embedded-opentype'),
-    url('./fonts/icomoon.ttf?hzbnkn') format('truetype'),
-    url('./fonts/icomoon.woff?hzbnkn') format('woff'),
-    url('./fonts/icomoon.svg?hzbnkn#icomoon') format('svg');
+  src:  url('./fonts/icomoon.eot?u1mxsv');
+  src:  url('./fonts/icomoon.eot?u1mxsv#iefix') format('embedded-opentype'),
+    url('./fonts/icomoon.ttf?u1mxsv') format('truetype'),
+    url('./fonts/icomoon.woff?u1mxsv') format('woff'),
+    url('./fonts/icomoon.svg?u1mxsv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change ../fonts */
+  /* use !important to prevent issues with browser extensions that change ./fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -30,6 +30,12 @@
 }
 .icon-calculator1:before {
   content: "\e901";
+}
+.icon-unpress:before {
+  content: "\e903";
+}
+.icon-press:before {
+  content: "\e904";
 }
 .icon-menu:before {
   content: "\e900";

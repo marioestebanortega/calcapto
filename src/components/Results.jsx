@@ -23,6 +23,8 @@ useEffect(()=>{
             <td>Valor de la cuota</td>
             <td className="vcRight">{data.valAcc}</td>
           </tr>
+          {props.withAccInit==='yes'?
+          <>
           <tr>
             <th colSpan="2">Cuota inicial</th>
           </tr>
@@ -38,6 +40,8 @@ useEffect(()=>{
             <td>Cuota mensual de la inicial</td>
             <td className="vcRight">{data.valMenIni}</td>
           </tr>
+          </>:<></>}
+          
           <tr>
             <th colSpan="2">Escrituras</th>
           </tr>
@@ -63,7 +67,8 @@ useEffect(()=>{
 const mapStateToProps=(state)=>{
 
   return {
-    data:state.result
+    data:state.result,
+    withAccInit:state.params.withAccInit
   }
 }
 

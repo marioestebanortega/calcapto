@@ -1,8 +1,14 @@
 
 
-export const calcCuot = (tasa, nMeses, pCuotaInicial, vApartamento, vAbono) => {
-    let valorCredito = obtenerValorCredito(formatNumber(pCuotaInicial), formatNumber(vApartamento), formatNumber(vAbono));
-    let i = formatNumber(tasa) / 1200;
+export const calcCuot = (tasa, nMeses, pCuotaInicial, vApartamento, vAbono,rateType) => {
+    let valorCredito = obtenerValorCredito(pCuotaInicial, formatNumber(vApartamento), formatNumber(vAbono));
+    let i=0;
+    if(rateType==='anual'){
+        i = tasa / 1200;
+    }
+    else{
+        i = tasa/100;
+    }
     let comun = Math.pow(1 + i, formatNumber(nMeses));
     let numerador = valorCredito * comun * i;
     let denominador = comun - 1;
@@ -10,8 +16,8 @@ export const calcCuot = (tasa, nMeses, pCuotaInicial, vApartamento, vAbono) => {
     return cuota;
 };
 export const obtenerValorCredito = (pCuotaInicial, vApartamento, vAbono) => {
-    let pCredito = 100 - formatNumber(pCuotaInicial);
-    let valorCredito = formatNumber(vApartamento) * formatNumber(pCredito) / 100 - formatNumber(vAbono);
+    let pCredito = 100 - pCuotaInicial;
+    let valorCredito = formatNumber(vApartamento) * pCredito / 100 - formatNumber(vAbono);
     return Math.round(valorCredito);
 };
 
@@ -25,12 +31,16 @@ export const calcSeg = (val) => {
     return Math.round(formatNumber(val) * 0.1 / 100);
 }
 
-export const calcAllData = (data) => {
+export const calcAllData = (data,rateType,withAccInit) => {
     const valAdds = data.jAddValues;
     const valCredVals = data.jCreditForm;
-    const valCredit = obtenerValorCredito(valCredVals.tIntRate, valCredVals.vProperties, valAdds.addCredit);
-    const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, valCredVals.tIntRate, valCredVals.vProperties, valAdds.addCredit);
-    const vIni = Math.round(formatNumber(valCredVals.vProperties) * formatNumber(valCredVals.tIntRate) / 100 - formatNumber(valAdds.addIni));
+    let pCuotaInicial=valCredVals.tIntRate;
+    if(withAccInit==='no'){
+        pCuotaInicial=0;
+    }
+    const valCredit = obtenerValorCredito(pCuotaInicial, valCredVals.vProperties, valAdds.addCredit);
+    const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, pCuotaInicial, valCredVals.vProperties, valAdds.addCredit,rateType);
+    const vIni = Math.round(formatNumber(valCredVals.vProperties) * pCuotaInicial / 100 - formatNumber(valAdds.addIni));
     const valEscr = calcEscr(valCredit);
     const vSeg = calcSeg(valCredit);
     const result = {
@@ -39,7 +49,7 @@ export const calcAllData = (data) => {
         valAcc: formatCurrencyVal(valCuota),
         valIni: formatCurrencyVal(vIni),
         valMIni: valCredVals.nNMonths,
-        valMenIni: formatCurrencyVal(vIni / formatNumber(valCredVals.nNMonths)),
+        valMenIni: formatCurrencyVal(formatNumber(Math.round(vIni / valCredVals.nNMonths))),
         valEscrit: formatCurrencyVal(valEscr),
         valSeg: formatCurrencyVal(vSeg),
         valEscritSeg: formatCurrencyVal(valCuota + vSeg)
@@ -88,4 +98,22 @@ export const genericEvent=(e)=>{
 }
 
 
+export const onMoveSwitchAddChar=(e,id,prop1,prop2,fun)=>{
+    const element = document.body.querySelector( `#${id} .switch-base .switch-circle`);
+    if(element.classList.contains("swith-move")){
+      element.classList.remove("swith-move");
+      fun(prop1)
+    }
+    else{
+      element.classList.add("swith-move");
+      fun(prop2)
+    }
+    
+  }
 
+export const cleanResults=(props)=>{
+    props.setVisible(0);
+    const elementCalc=document.getElementById('icon-anim');
+    elementCalc.classList.remove('icon-exec-ok');
+    elementCalc.classList.add('icon-exec-anim');
+}

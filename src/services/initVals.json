@@ -2,7 +2,7 @@
   "jCreditForm": {
     "vProperties": 270000000,
     "nMonths": 180,
-    "nRateAn":11,
+    "nRateAn":1,
     "tIntRate": 30,
     "nNMonths": 20
   },
@@ -20,5 +20,9 @@
     "valSeg":0,
     "valEscritSeg":0
  },
- "visible":0
+ "visible":0,
+ "params":{
+   "rateType":"month",
+   "withAccInit":"no"
+ }
 }

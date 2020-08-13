@@ -28,3 +28,17 @@ export const setVisible=(payload) =>{
     payload
     }
 }
+
+export const setRateType=(payload) =>{
+    return {
+    type:'SET_RATE_TYPE',
+    payload
+    }
+}
+
+export const setIsWithIni=(payload) =>{
+    return {
+    type:'SET_WITH_INI',
+    payload
+    }
+}

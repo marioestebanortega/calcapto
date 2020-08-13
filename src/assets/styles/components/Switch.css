@@ -1,0 +1,25 @@
+.switch{
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .switch-base,.switch-circle{
+    margin:0;
+  padding:0;
+  border: none;
+  height: 1.5em;
+  border-radius: 3em;
+  
+  }
+  .switch-base{
+  width: 3em;
+  background-color: white;
+  }
+  .switch-circle{
+  width: 1.5em;
+  background-color:#145493;
+  transition: 0.4s;
+  }
+  .swith-move{
+    margin-left: 1.5em;
+    transition: 0.4s;
+  }

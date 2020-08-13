@@ -22,6 +22,26 @@ const reducers=(state,action)=>{
        return {...state,
         visible: newObject
        }
+
+       case 'SET_RATE_TYPE': 
+   
+       return {...state,
+        params: {
+            ...state.params,
+            rateType:newObject
+        }
+       }
+       case 'SET_WITH_INI': 
+   
+       return {...state,
+        params: {
+            ...state.params,
+            withAccInit:newObject
+        }
+       }
+
+       
+       
        default: return state;
    }
 }
