@@ -30,7 +30,7 @@ export const calcAllData = (data) => {
     const valCredVals = data.jCreditForm;
     const valCredit = obtenerValorCredito(valCredVals.tIntRate, valCredVals.vProperties, valAdds.addCredit);
     const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, valCredVals.tIntRate, valCredVals.vProperties, valAdds.addCredit);
-    const vIni = Math.round(formatNumber(valCredVals.vProperties) * formatNumber(valCredVals.nRateAn) / 100 - formatNumber(valAdds.addIni));
+    const vIni = Math.round(formatNumber(valCredVals.vProperties) * formatNumber(valCredVals.tIntRate) / 100 - formatNumber(valAdds.addIni));
     const valEscr = calcEscr(valCredit);
     const vSeg = calcSeg(valCredit);
     const result = {
