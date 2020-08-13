@@ -111,6 +111,7 @@
   padding: 1em;
   font-size: 0.8em;
   text-align: center;
+  transition: 1s;
 }
 
 .tableData tr th {

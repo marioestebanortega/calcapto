@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { connect } from 'react-redux';
 
 
 const Results = (props) =>{
-
+useEffect(()=>{
+  location.href = "#inits"
+},[])
   const data=props.data;
     return (<>
     <div className="inits" id="inits">
