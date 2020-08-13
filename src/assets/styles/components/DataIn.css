@@ -6,6 +6,16 @@
     opacity: 1;
   }
 }
+@keyframes appears-dataI2 {
+  from {
+    opacity: 0;
+    background: gray;
+  }
+  to {
+    opacity: 1;
+    background: #000716;
+  }
+}
 
 .icon-exec {
   display: none;
@@ -38,8 +48,12 @@
   background: #000716;
   color: white;
   opacity: 0.8;
-  animation-name: appears-dataIn;
-  animation-duration: 2s;
+}
+
+#inits {
+
+  animation-name: appears-dataI2;
+  animation-duration: 3s;
 }
 .inits hr {
   width: 90%;
