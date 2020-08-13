@@ -5,13 +5,13 @@ import CreditForm from "./CreditForm";
 import AddValues from "./AddValues";
 import { connect } from "react-redux";
 import {calcAllData,applyActiveLink} from '../services/calcaptoServices'
-import {calcVals} from '../actions/actions'
+import {calcVals,setVisible} from '../actions/actions'
 
 
 
 
 const DataIn = (props) => {
-
+  let visible=props.data.visible;
   useEffect(()=>{
     applyActiveLink(1,3);
   },[]);
@@ -19,8 +19,13 @@ const DataIn = (props) => {
 
   //const formCals=data.result;
   const calcAll=(e)=>{
-
     e.preventDefault();
+    props.setVisible(1);
+    visible=props.data.visible;
+    console.log('visible:',props.visible)
+    const elementCalc=document.getElementById('icon-anim');
+    elementCalc.classList.add('icon-exec-ok');
+    elementCalc.classList.remove('icon-exec-anim');
 
    const result=calcAllData(props.data);
 
@@ -30,25 +35,26 @@ const DataIn = (props) => {
   }
 
  //const [formCals,setFormCalcs]=useState({});
-  return (
+  return (<>
     <section className="DataIn" >
       <div className="container">
         <form className="formData" onSubmit={calcAll}>
           <CreditForm />
           <AddValues />
-          <Results/>
+          {visible===1&&<Results/>}
           <div className="calcs">
             <button className="calcData"  >Calcular
               </button>
             
 
-              <button className="icon-exec icon-calculator1"  >
+              <button id="icon-anim" className="icon-exec icon-exec-anim icon-calculator1"  >
               </button>
              
           </div>
         </form>
       </div>
     </section>
+    </>
   );
 };
 
@@ -60,5 +66,6 @@ const mapStateToProps=(state)=>{
 
 const mapActionsToProps={
   calcVals,
+  setVisible
 }
 export default connect(mapStateToProps,mapActionsToProps)(DataIn);

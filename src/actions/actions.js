@@ -18,4 +18,13 @@ export const calcVals=(payload) =>{
     type:'CALC_VALS',
     payload
     }
+
+}
+
+
+export const setVisible=(payload) =>{
+    return {
+    type:'SET_VISIBLE',
+    payload
+    }
 }

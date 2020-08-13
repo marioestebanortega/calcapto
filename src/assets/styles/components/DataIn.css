@@ -1,158 +1,157 @@
 @keyframes appears-dataIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
 .icon-exec {
-    display: none;
-}  
-.formData{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
+  display: none;
 }
-.DataIn{
-    display: flex;
-    justify-content: center;
-    padding-top:2em;
-    padding-bottom: 4em;
-    animation-name: appears-dataIn;
-    animation-duration: 1s;
-    
+.formData {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
-
-.inits{
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    background-color: white;
-    width: 25%;
-    padding-top:2em;
-    padding-bottom: 1em;
-    border-radius: 1em;
-    background: #000716;
-    color: white;
-    opacity: 0.8;
-    
-
-}
-.inits hr{
-    width: 90%;
-    border-top:3px solid #000716;
-}
-.inits h1{
-    margin-top: 0;
-    font-size: 2em;
-    color:#0050A0;
-    font-weight: 900;
-  
-    margin-bottom:1em;
-}
-.inits label{
-    margin-bottom: 0.2em;
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: center;
- }
-
-.inits input{
-    margin-bottom: 1em;
-    font-size: 1em;
-    text-align: center;
-    background-color: white;
-    border:1px solid black;
-    border-radius: 2em;
-    width: 80%;
-
- }
-
- .inits input:focus{
-    outline: none;
-    background-color: #DDF1FF;
-    transition:1s;
+.DataIn {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 4em;
+  animation-name: appears-dataIn;
+  animation-duration: 1s;
 }
 
- .calcs{
-     padding-top:1em;
-     width: 100%;
-     display: flex;
-     justify-content: center;
- }
+.inits {
+  display: flex;
+  flex-direction: column;
 
- .calcData{
-     width: 20%;
-     border-radius: 1em;
-     font-size: 1.5em;
-     font-weight: bold;
-     color:white;
-     background-color: #0050A0;
-     margin:1em;
-     height: 2em;
-     border: 0;
-     transition: 0.5s;
- }
- .calcData:hover{
-     background-color: #73AC5E;
-     color: black;
- }
- .calcData:focus{
-    outline: none;
+  align-items: center;
+  background-color: white;
+  width: 25%;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  border-radius: 1em;
+  background: #000716;
+  color: white;
+  opacity: 0.8;
 }
- .footer-first strong{
-     color: #0050A0;
-     font-size: bold;
- }
-
-
- .tableData{
-    border-spacing: 0px;
-    width: 100%;
-    padding: 1em;
-    font-size: 0.8em;
-    text-align: center;
- }
-
-
- .tableData tr th{
-     border: 1px solid white;
-     padding:0.1em;
-     background-color: white;
-     width: 40%;
-     color:black
-     
- }
- .tableData tr td{
-    border: 1px solid white;
-    padding:0.5em;
+.inits hr {
+  width: 90%;
+  border-top: 3px solid #000716;
 }
-.vcRight{
-    width: 60%;
+.inits h1 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #0050a0;
+  font-weight: 900;
+
+  margin-bottom: 1em;
+}
+.inits label {
+  margin-bottom: 0.2em;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.inits input {
+  margin-bottom: 1em;
+  font-size: 1em;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2em;
+  width: 80%;
+}
+
+.inits input:focus {
+  outline: none;
+  background-color: #ddf1ff;
+  transition: 1s;
+}
+
+.calcs {
+  padding-top: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.calcData {
+  width: 20%;
+  border-radius: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  background-color: #0050a0;
+  margin: 1em;
+  height: 2em;
+  border: 0;
+  transition: 0.5s;
+}
+.calcData:hover {
+  background-color: #73ac5e;
+  color: black;
+}
+.calcData:focus {
+  outline: none;
+}
+.footer-first strong {
+  color: #0050a0;
+  font-size: bold;
+}
+
+.tableData {
+  border-spacing: 0px;
+  width: 100%;
+  padding: 1em;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.tableData tr th {
+  border: 1px solid white;
+  padding: 0.1em;
+  background-color: white;
+  width: 40%;
+  color: black;
+}
+.tableData tr td {
+  border: 1px solid white;
+  padding: 0.5em;
+}
+.vcRight {
+  width: 60%;
 }
 
 @media screen and (max-width: 1024px) {
-   
 }
 
 @media screen and (max-width: 767px) {
-   
-  .formData{
-      display: block;
-  }  
-
-  .inits{
-      width: 90%;
-      margin-bottom: 2em;
-      margin-left: 10%;
-
+  .formData {
+    display: block;
   }
-  .calcData{
-  display: none;
-}
-.icon-exec {
+
+  .inits {
+    width: 90%;
+    margin-bottom: 2em;
+    margin-left: 10%;
+  }
+  .calcData {
+    display: none;
+  }
+
+  @keyframes high-buttom {
+    from {color: white;}
+    to {color: #0050a0;}
+  }
+  .icon-exec {
     font-size: 2.5em;
-    margin:0;
+    margin: 0;
     padding: 0;
 
     position: fixed;
@@ -164,15 +163,24 @@
     outline: none;
     color: white;
     margin-left: 0.1em;
+    
+  }
 
-}
+  .icon-exec-anim{
+    animation-name: high-buttom;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
+  }
+
+  .icon-exec-ok{
+    color:#73ac5e;
+  }
+
+
+
 }
 @media screen and (max-width: 480px) {
-   
-
 }
 
 @media screen and (max-width: 320px) {
-   
 }
-

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { connect } from 'react-redux'
-import {addCreditVals} from '../actions/actions'
+import {addCreditVals,setVisible} from '../actions/actions'
 import {genericEvent} from '../services/calcaptoServices'
 
 const CreditForm =(props)=>{
@@ -11,7 +11,10 @@ const CreditForm =(props)=>{
   genericEvent(e);
  }
 const onChangeFormCredit=(e)=>{
-
+  props.setVisible(0);
+  const elementCalc=document.getElementById('icon-anim');
+  elementCalc.classList.remove('icon-exec-ok');
+  elementCalc.classList.add('icon-exec-anim');
   props.addCreditVals({...formCreditForm, [e.target.id]:e.target.value});
   
 }
@@ -40,10 +43,11 @@ const onChangeFormCredit=(e)=>{
 
 const mapStateToProps=(state)=>{
   return {
-    formCreditForm:state.jCreditForm
+    formCreditForm:state.jCreditForm,
   }
 }
 const mapActionsToProps={
   addCreditVals,
+  setVisible
 }
 export default connect(mapStateToProps,mapActionsToProps)(CreditForm)

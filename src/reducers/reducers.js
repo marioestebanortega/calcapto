@@ -17,6 +17,11 @@ const reducers=(state,action)=>{
        return {...state,
         result: newObject
        }
+       case 'SET_VISIBLE': 
+   
+       return {...state,
+        visible: newObject
+       }
        default: return state;
    }
 }

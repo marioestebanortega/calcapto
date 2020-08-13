@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { connect } from "react-redux";
-import {addAddsVals} from '../actions/actions'
+import {addAddsVals,setVisible} from '../actions/actions'
 import {genericEvent} from '../services/calcaptoServices'
 
 
@@ -8,6 +8,10 @@ const AddValues = (props) => {
     const formAddForm=props.formAddForm;
 
     const onChangeFormCredit=(e)=>{
+      props.setVisible(0);
+      const elementCalc=document.getElementById('icon-anim');
+    elementCalc.classList.remove('icon-exec-ok');
+    elementCalc.classList.add('icon-exec-anim');
     props.addAddsVals({...formAddForm, [e.target.id]:e.target.value});
     }
     const onEvent=(e)=>{
@@ -34,5 +38,6 @@ const mapStateToProps=(state)=>{
 }
 const mapActionsToProps={
   addAddsVals,
+  setVisible
 }
 export default connect (mapStateToProps,mapActionsToProps)(AddValues);
