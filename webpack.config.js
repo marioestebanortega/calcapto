@@ -1,65 +1,66 @@
-const path =require('path')
-const HtmlWebPackPlugin=require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports={
-    entry: './src/index.js',
-    output:{
-        path: path.resolve(__dirname,'dist'),
-        filename: 'bundle.js'
-    },
-    resolve:{
-        extensions: ['.js','.jsx'],
-    },
-    module:{
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }     
-            }
-            ,{
-                test: /\.html$/,
-                use:[
-                    {
-                        loader: "html-loader"
-                    }
-                ]
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                  // Translates CSS into CommonJS
-                  'css-loader',
-                  // Compiles Sass to CSS
-                  'sass-loader',
-                ],
-              },
-              {
-                test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-                use: {
-                  loader: 'url-loader',
-                  options: {
-           
-                  }
-                }
-              },
-        ]
-    },
-    plugins:[
-        new HtmlWebPackPlugin({
-            template: './public/index.html',
-            filename: './index.html'
+const path = require("path"); //Nos ayuda a crear mejores path's
 
-        }),
-        new MiniCssExtractPlugin({
-            filename:'assets/[name].css'
+module.exports = {
+  entry: {
+    home: path.resolve(__dirname,'src/index.js'),
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js'
+  },
+  resolve:{
+    extensions: ['.js','.jsx'],
+},
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         }
-        )
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCSSExtractPlugin.loader
+          },
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 900000,
+          }
+        }
+      },
     ]
-}
+  },
+  plugins: [
+
+    new HtmlWebpackPlugin({
+        favicon: "./public/favicon.png",
+        template: './index.html',
+        filename: './index.html'
+    }),
+    new MiniCSSExtractPlugin({
+      filename: 'css/[name].css'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: 'public' },
+      ]
+    })
+  ]
+  }

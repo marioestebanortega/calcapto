@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import './assets/styles/components/Contact.scss'
+import './assets/styles/components/Contact.css'
 import {applyActiveLink} from './services/calcaptoServices'
 
 

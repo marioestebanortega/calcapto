@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import '../assets/styles/components/Header.scss'
+import '../assets/styles/components/Header.css'
 import { Link } from 'react-router-dom'
 import {execMenu} from './menuactions.js'
 

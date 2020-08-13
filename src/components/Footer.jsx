@@ -1,6 +1,6 @@
 import React from 'react'
-import '../assets/styles/components/Footer.scss'
-import logo from '../assets/images/logoSinNombre.png'
+import '../assets/styles/components/Footer.css'
+
 
 
 const Footer = ()=>{
@@ -12,7 +12,7 @@ const Footer = ()=>{
         <p>
         <strong><b>CALCAPTO 1.0</b></strong> Copyright © Todos los derechos reservados
           <img
-           src={logo}
+           src='/public/images/logoSinNombre.png'
             alt="" /></p>
     
       </div>

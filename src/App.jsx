@@ -1,5 +1,5 @@
 import React from 'react'
-import './assets/styles/App.scss'
+import './assets/styles/App.css'
 
 import DataIn from './components/DataIn'
 

@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
-import '../assets/styles/components/About.scss'
-import hero from '../assets/images/Hero.jpg'
+import '../assets/styles/components/About.css'
+//import hero from '../assets/images/Hero.jpg'
 import {applyActiveLink} from '../services/calcaptoServices'
 
 
@@ -11,7 +11,14 @@ const About =()=>{
 
 return <section className="about-personal-data">
 <div className="hero-card">
-  <img src={hero}/>
+
+
+  <img
+           
+            src="/public/images/hero.jpg"
+            alt="Imagen principal del sitio"
+          />
+
   <div className="hero-detail">
     <h4><b>Mario Esteban Ortega Garcés</b></h4>
     <p>CTO Abba Consoulting Group</p>

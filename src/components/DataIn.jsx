@@ -1,5 +1,5 @@
 import React,{useEffect} from "react";
-import "../assets/styles/components/DataIn.scss";
+import "../assets/styles/components/DataIn.css";
 import Results from "./Results";
 import CreditForm from "./CreditForm";
 import AddValues from "./AddValues";
