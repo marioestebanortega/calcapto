@@ -30,7 +30,7 @@ const DataIn = (props) => {
    const result=calcAllData(props.data);
 
     props.calcVals(result)
-    
+    location.href = "#inits"
 
   }
 

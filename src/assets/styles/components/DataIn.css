@@ -38,6 +38,8 @@
   background: #000716;
   color: white;
   opacity: 0.8;
+  animation-name: appears-dataIn;
+  animation-duration: 2s;
 }
 .inits hr {
   width: 90%;
@@ -111,7 +113,6 @@
   padding: 1em;
   font-size: 0.8em;
   text-align: center;
-  transition: 1s;
 }
 
 .tableData tr th {
@@ -141,7 +142,9 @@
     width: 90%;
     margin-bottom: 2em;
     margin-left: 10%;
+   
   }
+ 
   .calcData {
     display: none;
   }
