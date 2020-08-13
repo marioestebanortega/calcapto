@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "name": "Hoja de vida Mario Esteban Ortega Garcés",
+    "builds": [
+      { "use": "@now/static-build", "src": "package.json"}
+    ],
+    "routes": [
+      {
+        "src": "/dest", "dest": "/"
+      }
+    ]
+  }

@@ -105,7 +105,7 @@
      font-size: bold;
  }
 
- //tabla
+
  .tableData{
     border-spacing: 0px;
     width: 100%;
@@ -162,6 +162,7 @@
     border: none;
     outline: none;
     color: white;
+    margin-left: -0.2em;
 }
 }
 @media screen and (max-width: 480px) {
