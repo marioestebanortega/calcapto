@@ -24,7 +24,7 @@ const onChangeFormCredit=(e)=>{
     <label htmlFor="vPropertie">($) Valor del inmueble</label>
     <input type="text" id="vProperties"  defaultValue={formCreditForm.vProperties} onBlur={onEvent}  onChange={onChangeFormCredit} placeholder="Ejemplo: $400.000.000.00" />
 
-    <label htmlFor="nMonths">Numero de meses</label>
+    <label htmlFor="nMonths">Número de meses</label>
     <input type="text" id="nMonths" defaultValue={formCreditForm.nMonths} onChange={onChangeFormCredit} placeholder="Ejemplo: 5"/>
     <div className="label-switch">
      <Switch id='tipoTasa' setVisible={props.setVisible} prop1='anual' prop2='month' fun={props.setRateType} ini={props.rateType}/>
