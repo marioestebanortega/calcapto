@@ -132,7 +132,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-
+   
 }
 
 @media screen and (max-width: 767px) {
@@ -151,7 +151,7 @@
   display: none;
 }
 .icon-exec {
-    font-size: 3em;
+    font-size: 2.5em;
     margin:0;
 
     position: fixed;
@@ -162,15 +162,19 @@
     border: none;
     outline: none;
     color: white;
-    margin-left: -0.2em;
+    margin-left: -2vw;
 }
 }
 @media screen and (max-width: 480px) {
-
+    .icon-exec {
+        margin-left: -1vw;
+    }
 
 }
 
 @media screen and (max-width: 320px) {
-
+    .icon-exec {
+        margin-left: -1vw;
+    }
 }
 

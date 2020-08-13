@@ -21,7 +21,7 @@ return <section className="about-personal-data">
 
   <div className="hero-detail">
     <h4><b>Mario Esteban Ortega Garcés</b></h4>
-    <p>CTO Abba Consoulting Group</p>
+    <p>CTO CALCAPTO Company</p>
     <p>Soluciones en tecnología de software</p>
   </div>
 </div>
