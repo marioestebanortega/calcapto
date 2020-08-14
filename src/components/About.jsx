@@ -6,7 +6,7 @@ import {applyActiveLink} from '../services/calcaptoServices'
 
 const About =()=>{
   useEffect(()=>{
-    applyActiveLink(2,3);
+    applyActiveLink(3,4);
   },[]);
 
 return <section className="about-personal-data">

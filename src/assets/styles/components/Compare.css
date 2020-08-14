@@ -1,0 +1,145 @@
+
+
+.compareTable {
+    border-spacing: 0px;
+    width: 100%;
+    padding: 0.1em;
+    text-align: center;
+    margin-top:3em;
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    background: #000716;
+    color: white;
+    opacity: 0.8;
+    font-size:2em;
+  }
+  
+  .compareTable tr th {
+    font-size: 0.6em;
+    border: 0;
+    padding: 0.1em;
+    width: 15vw;
+  }
+  .compareTable tr td {
+    font-size: 0.5em;
+    padding: 0.1em;
+  }
+  .dataRow:hover{
+    background-color: gray;
+    color:white;
+  } 
+  .titles-table{
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .compareTable tr th h2{
+   margin-top:0.2em;
+   margin-bottom: 0.2em;
+   font-size: 1.5em;
+   color: gray;
+  }
+
+
+  .input-15{
+width: 15vw;
+  }
+  .input-10{
+      font-size: 1em;
+    width: 10vw;
+      }
+
+
+      .formSets{
+        margin-top: 4em;
+        background-color: #000716;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        border-radius: 1em;
+        opacity: 0.9;
+      }
+      .ingress{
+        width: 25%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1em;
+        width: 50%;
+        
+      }
+      .ingress label{
+        margin-right: 1em;
+        font-size: 1em;
+      }
+      .ingress input{
+        width: 25%;
+        border-radius: 1em;
+        border: 0;
+        font-size: 1em;
+      }
+      .ingress button{
+        margin-right: 1em;
+        border: 0;
+        border-radius: 1em;
+        font-size: 1em;
+        width: 40%;
+        background-color: #245788;
+        
+      }
+      .ingress button:hover{
+        background-color:  #73ac5e
+      }
+      .setData{
+        display: flex;
+        justify-content: center;
+      }
+     
+     
+
+      @media screen and (max-width: 1024px) {
+      }
+      
+      @media screen and (max-width: 767px) {
+        
+        .compareTable {
+          font-size:1em;
+        }
+        .compareTable tr th h2{
+          font-size: 1.2em;
+         }
+      .formSets{
+        width: 100%;
+        padding-right: 1em;
+        padding-left: 1em ;
+       
+      }
+      .setData{
+        width: 100%;
+        font-size: 0.8em;
+      }
+      .ingress{
+        width: 100%;
+    
+      }
+
+      .ingress input{
+        width: 50%;
+      
+      }
+      .ingress button{
+      
+        width: 50%;
+
+        
+      }
+    }
+      @media screen and (max-width: 480px) {
+      }
+      
+      @media screen and (max-width: 320px) {
+      }
+      

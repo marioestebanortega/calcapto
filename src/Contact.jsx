@@ -5,7 +5,7 @@ import {applyActiveLink} from './services/calcaptoServices'
 
 const Contact = () =>{
     useEffect(()=>{
-        applyActiveLink(3,3);
+        applyActiveLink(4,4);
       },[]);
 return(
     <section className="contact">

@@ -28,12 +28,18 @@ const Header =()=>{
           
                 </li>
                 <li>
-                <Link id="elementCalc2" className="option" to="/about">
+                <Link id="elementCalc2" className="option" to="/compare">
+                Comparar
+                </Link>
+          
+                </li>
+                <li>
+                <Link id="elementCalc3" className="option" to="/about">
                Nosotros
                 </Link>
                 </li> 
                 <li>
-                <Link id="elementCalc3" className="option" to="/contact">
+                <Link id="elementCalc4" className="option" to="/contact">
                Contáctanos
                 </Link>
                 </li>    

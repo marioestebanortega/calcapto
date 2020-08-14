@@ -9,7 +9,7 @@ export const calcCuot = (tasa, nMeses, pCuotaInicial, vApartamento, vAbono,rateT
     else{
         i = tasa/100;
     }
-    let comun = Math.pow(1 + i, formatNumber(nMeses));
+    let comun = Math.pow(1 + i, Math.round(formatNumber(nMeses)));
     let numerador = valorCredito * comun * i;
     let denominador = comun - 1;
     let cuota = Math.round(numerador / denominador);
