@@ -4,13 +4,14 @@ import {onMoveSwitchAddChar,cleanResults} from '../services/calcaptoServices'
 
 const Switch = (props) => {
     let classIni;
-    if(props.ini===props.prop1){
+    if(props.ini!==props.prop1){
         classIni="";
     }
     else{
         classIni="swith-move"
     }
     const onChangeSwitch=(e)=>{
+
         cleanResults(props);
         onMoveSwitchAddChar(e,props.id,props.prop1,props.prop2,props.fun);
       }

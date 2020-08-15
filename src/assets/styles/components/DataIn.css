@@ -77,8 +77,7 @@
   font-size: 2em;
   color: #0050a0;
   font-weight: 900;
-
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 .inits label {
   margin-bottom: 0.2em;
@@ -104,7 +103,7 @@
 }
 
 .calcs {
-  padding-top: 1em;
+  padding-top: 0.5em;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -117,7 +116,7 @@
   font-weight: bold;
   color: white;
   background-color: #0050a0;
-  margin: 1em;
+  margin: 0.5em 1em 1em 1em;
   height: 2em;
   border: 0;
   transition: 0.5s;

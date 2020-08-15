@@ -69,6 +69,7 @@ width: 15vw;
         justify-content: flex-start;
         margin-bottom: 1em;
         width: 50%;
+        align-items: center;
         
       }
       .ingress label{
@@ -80,6 +81,7 @@ width: 15vw;
         border-radius: 1em;
         border: 0;
         font-size: 1em;
+        padding:0.2em;
       }
       .ingress button{
         margin-right: 1em;
@@ -119,8 +121,7 @@ width: 15vw;
       }
       .setData{
         width: 100%;
-        font-size: 0.8em;
-      }
+        font-size: 0.8em;}
       .ingress{
         width: 100%;
     

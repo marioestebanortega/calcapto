@@ -23,12 +23,10 @@ const Compare = (props) => {
   const monthIni = props.data.jCreditForm.nMonths;
   const vCoutIni = formatNumber(props.data.result.valAcc);
   const pRateIni = vCoutIni * monthIni - valCredit;
-  let pInicial = props.data.jCreditForm.tIntRate;
+  let pInicial = 0//por que ya se efectuo el descuento de la icnial;props.data.jCreditForm.tIntRate;
   const tipRate = props.data.params.rateType;
   const withAccInit = props.data.params.withAccInit;
-  if (withAccInit === "no") {
-    pInicial = 0;
-  }
+
   let tasaIni=0;
   if(tipRate==='month'){
     tasaIni=1;
@@ -45,10 +43,10 @@ const Compare = (props) => {
   const calcTasa=(tipRate,i)=>
   {
     if(tipRate==='month'){
-       return (0.8 + i / 5).toFixed(2);
+       return (0.5 + i / 20).toFixed(2);
     }
     else{
-      return (5 + i ).toFixed(2);
+      return (5 + i/2 ).toFixed(2);
     }
   }
 
@@ -62,6 +60,7 @@ const Compare = (props) => {
     for (let i = 0; i < j; i++) {
       ts[i] = calcTasa(tipRate,i);
       ms[i] = 60 + 10 * i;
+      
       cuotasC[i] = calcCuot(
         ts[i],
         ms[i],
@@ -70,6 +69,8 @@ const Compare = (props) => {
         valAbonoC,
         tipRate
       );
+     
+     
       interesC[i] = cuotasC[i] * ms[i] - valCredit;
       pInteresC[i] = Math.round((100 * interesC[i]) / valCredit);
 
@@ -105,6 +106,7 @@ const Compare = (props) => {
         valAbonoC,
         tipRate
       );
+     
       interesC[i] = cuotasC[i] * meses[i] - valCredit;
       pInteresC[i] = Math.round((100 * interesC[i]) / valCredit);
 
@@ -138,6 +140,7 @@ const Compare = (props) => {
     for (let i = 0; i < j; i++) {
 
       ms[i] = val ? val : 60 + 10 * i;
+     
       const element = document.getElementById("inputMon" + i);
       element.value = ms[i];
 
@@ -149,6 +152,9 @@ const Compare = (props) => {
         valAbonoC,
         tipRate
       );
+     
+
+   
       interesC[i] = cuotasC[i] * ms[i] - valCredit;
       pInteresC[i] = Math.round((100 * interesC[i]) / valCredit);
 
@@ -330,8 +336,11 @@ const Compare = (props) => {
             </table>
           </div>
         </section>
-      ) : (
-        <h1>Aun no se han hecho los calculos</h1>
+      ) : (<>
+        <h1>Se ha refrescado la pagina</h1>
+        <br></br>
+        <h2>Por favor ingrse  a la opcion Calculos del menu</h2>
+        </>
       )}
     </>
   );

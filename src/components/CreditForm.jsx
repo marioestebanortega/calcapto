@@ -17,7 +17,27 @@ const onChangeFormCredit=(e)=>{
   props.addCreditVals({...formCreditForm, [e.target.id]:e.target.value});
   
 }
+//Todo
+/*
+useEffect(()=>{
+try{
+  let nTasa=0;
+  if(props.rateType==='month'){
+    nTasa=1;
+  }
+  else{
+    nTasa=12;
+  }
+  const element=document.getElementById('nRateAn');
 
+  element.value=nTasa;
+  props.addCreditVals({...formCreditForm, 'nMonths':nMonths});
+}
+catch(e){
+  console.log('error',e)
+}
+},[props.rateType])
+*/
     return ( <div className="inits">
     <h1>Datos</h1>
    

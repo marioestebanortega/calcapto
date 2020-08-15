@@ -103,7 +103,11 @@
         text-align: center;
         justify-content: center;
     }
+    .hide-link{
+      display: none !important;
+    }
     .logo-image h1{
+
         font-size: 10vw;
         width: 100%;
     }

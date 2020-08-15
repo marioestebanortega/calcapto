@@ -2,10 +2,11 @@ import React,{useEffect} from 'react'
 import '../assets/styles/components/Header.css'
 import { Link } from 'react-router-dom'
 import {execMenu} from './menuactions.js'
+import { connect } from 'react-redux'
 
 
 
-const Header =()=>{
+const Header =(props)=>{
 
     useEffect(()=>{
         execMenu();
@@ -22,12 +23,12 @@ const Header =()=>{
         <nav className="menu">
         <ol>
             <li>
-                <Link id="elementCalc1" className="option" to="/">
+                <Link id="elementCalc1" className="option" to="">
                 Cálculos
                 </Link>
           
                 </li>
-                <li>
+                <li className={props.data.result.valCredit?'':'hide-link'}>
                 <Link id="elementCalc2" className="option" to="/compare">
                 Comparar
                 </Link>
@@ -50,5 +51,10 @@ const Header =()=>{
     </>
     )
 }
-
-export default Header;
+const mapPropsToState=(state)=>{
+    return{
+        data:state
+    }
+}
+const mapActionsToState={}
+export default connect(mapPropsToState,mapActionsToState)(Header);

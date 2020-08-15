@@ -39,7 +39,7 @@ export const calcAllData = (data,rateType,withAccInit) => {
         pCuotaInicial=0;
     }
     const valCredit = obtenerValorCredito(pCuotaInicial, valCredVals.vProperties, valAdds.addCredit);
-    const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, pCuotaInicial, valCredVals.vProperties, valAdds.addCredit,rateType);
+    const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, pCuotaInicial, valCredVals.vProperties, valAdds.addCredit,rateType,withAccInit);
     const vIni = Math.round(formatNumber(valCredVals.vProperties) * pCuotaInicial / 100 - formatNumber(valAdds.addIni));
     const valEscr = calcEscr(valCredit);
     const vSeg = calcSeg(valCredit);
@@ -116,4 +116,5 @@ export const cleanResults=(props)=>{
     const elementCalc=document.getElementById('icon-anim');
     elementCalc.classList.remove('icon-exec-ok');
     elementCalc.classList.add('icon-exec-anim');
+
 }
