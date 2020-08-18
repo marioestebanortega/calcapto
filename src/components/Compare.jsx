@@ -282,7 +282,7 @@ const Compare = (props) => {
                     <h4>Pago a intereses</h4>
                   </th>
                   <th colSpan="1">
-                    <h4>Ahorro</h4>
+                    <h4>Ahorro en la cuota</h4>
                   </th>
                 </tr>
 
@@ -321,10 +321,9 @@ const Compare = (props) => {
                       </td>
                       <td>
                         <label className="input-15" htmlFor="vPropertie">
-                          {pRateIni - formatNumber(interes[i]) > 0
+                          {formatNumber(vCoutIni)-formatNumber(cuotas[i]) > 0
                             ? "$" +
-                              formatCurrencyVal(
-                                pRateIni - formatNumber(interes[i])
+                              formatCurrencyVal(formatNumber(vCoutIni)-formatNumber(cuotas[i])
                               )
                             : "No se ahorra"}
                         </label>
@@ -339,7 +338,7 @@ const Compare = (props) => {
       ) : (<>
         <h1>Se ha refrescado la pagina</h1>
         <br></br>
-        <h2>Por favor ingrse  a la opcion Calculos del menu</h2>
+        <h2>Por favor ingrese  a la opcion "Cálculos" del menu</h2>
         </>
       )}
     </>
