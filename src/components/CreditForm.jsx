@@ -47,7 +47,7 @@ catch(e){
     <label htmlFor="nMonths">Número de meses</label>
     <input type="text" id="nMonths" defaultValue={formCreditForm.nMonths} onChange={onChangeFormCredit} placeholder="Ejemplo: 5"/>
     <div className="label-switch">
-     <Switch id='tipoTasa' setVisible={props.setVisible} prop1='anual' prop2='month' fun={props.setRateType} ini={props.rateType}/>
+     <Switch id='tipoTasa' setVisible={props.setVisible} prop1='month' prop2='anual' fun={props.setRateType}/>
 <label htmlFor="nRateAn">{props.rateType==='anual'?'(%)Tasa Anual':'(%)Tasa mensual'}</label>
 </div>
     <input type="text" id="nRateAn" defaultValue={formCreditForm.nRateAn} onChange={onChangeFormCredit} placeholder="Ejemplo: 12%" />

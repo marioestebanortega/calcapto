@@ -40,11 +40,7 @@ const DataIn = (props) => {
     <section className="DataIn" >
       <div className="container">
         <form className="formData" onSubmit={calcAll}>
-         
-          <CreditForm />
-          <AddValues />
-          {visible===1&&<Results/>}
-          <div className="calcs">
+        <div className="calcs">
             <button className="calcData"  >Calcular
               </button>
             
@@ -53,6 +49,10 @@ const DataIn = (props) => {
               </button>
              
           </div>
+          <CreditForm />
+          <AddValues />
+          {visible===1&&<Results/>}
+          
         </form>
       </div>
     </section>
