@@ -225,7 +225,7 @@ const Compare = (props) => {
                   <input defaultValue={tasaIni} type="text" id="vTasa" onChange={onChangeConfig} />
                 </div>
                 <div className="ingress">
-                  <button onClick={putTasasAll}>Tasa estatica</button>
+                  <button onClick={putTasasAll}>Tasa estática</button>
                   <button onClick={putTasasAllAl}>Tasa aleatoria</button>
                 </div>
                 <div className="ingress">
@@ -233,7 +233,7 @@ const Compare = (props) => {
                   <input defaultValue={180} type="text" id="vMeses" onChange={onChangeConfig} />
                 </div>
                 <div className="ingress">
-                  <button onClick={putMesesAll}>Meses estaticos</button>
+                  <button onClick={putMesesAll}>Meses estáticos</button>
                   <button onClick={putMesesAllAl}>Meses aleatorio</button>
                 </div>
               </div>
