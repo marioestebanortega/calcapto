@@ -1,13 +1,13 @@
 
 
-export const calcCuot = (tasa, nMeses, pCuotaInicial, vApartamento, vAbono,rateType) => {
+export const calcCuot = (tasa, nMeses, pCuotaInicial, vApartamento, vAbono, rateType) => {
     let valorCredito = obtenerValorCredito(pCuotaInicial, formatNumber(vApartamento), formatNumber(vAbono));
-    let i=0;
-    if(rateType==='anual'){
+    let i = 0;
+    if (rateType === 'anual') {
         i = tasa / 1200;
     }
-    else{
-        i = tasa/100;
+    else {
+        i = tasa / 100;
     }
     let comun = Math.pow(1 + i, Math.round(formatNumber(nMeses)));
     let numerador = valorCredito * comun * i;
@@ -31,15 +31,15 @@ export const calcSeg = (val) => {
     return Math.round(formatNumber(val) * 0.1 / 100);
 }
 
-export const calcAllData = (data,rateType,withAccInit) => {
+export const calcAllData = (data, rateType, withAccInit) => {
     const valAdds = data.jAddValues;
     const valCredVals = data.jCreditForm;
-    let pCuotaInicial=valCredVals.tIntRate;
-    if(withAccInit==='no'){
-        pCuotaInicial=0;
+    let pCuotaInicial = valCredVals.tIntRate;
+    if (withAccInit === 'no') {
+        pCuotaInicial = 0;
     }
     const valCredit = obtenerValorCredito(pCuotaInicial, valCredVals.vProperties, valAdds.addCredit);
-    const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, pCuotaInicial, valCredVals.vProperties, valAdds.addCredit,rateType,withAccInit);
+    const valCuota = calcCuot(valCredVals.nRateAn, valCredVals.nMonths, pCuotaInicial, valCredVals.vProperties, valAdds.addCredit, rateType, withAccInit);
     const vIni = Math.round(formatNumber(valCredVals.vProperties) * pCuotaInicial / 100 - formatNumber(valAdds.addIni));
     const valEscr = calcEscr(valCredit);
     const vSeg = calcSeg(valCredit);
@@ -66,17 +66,17 @@ export const formatCurrencyVal = (n) => {
 
 };
 
-export const applyActiveLink=(n,cant)=>{
-    for(let i=1;i<=cant;i++){
-        let elementCalc=document.getElementById('elementCalc'+i);
-        if(i===n){
+export const applyActiveLink = (n, cant) => {
+    for (let i = 1; i <= cant; i++) {
+        let elementCalc = document.getElementById('elementCalc' + i);
+        if (i === n) {
             elementCalc.classList.add('active-link');
         }
-        else{
+        else {
             elementCalc.classList.remove('active-link');
         }
     }
-   
+
 }
 
 
@@ -90,31 +90,69 @@ export const formatNumber = (n) => {
 
 }
 
-export const genericEvent=(e)=>{
-    const val=formatNumber(e.target.value);
+export const genericEvent = (e) => {
+    const val = formatNumber(e.target.value);
 
-    const element=document.getElementById(e.target.id);
-    element.value=formatCurrencyVal(val+"");
+    const element = document.getElementById(e.target.id);
+    element.value = formatCurrencyVal(val + "");
 }
 
 
-export const onMoveSwitchAddChar=(e,id,prop1,prop2,fun)=>{
-    const element = document.body.querySelector( `#${id} .switch-base .switch-circle`);
-    if(element.classList.contains("swith-move")){
-      element.classList.remove("swith-move");
-      fun(prop1)
+export const onMoveSwitchAddChar = (e, id, prop1, prop2, fun) => {
+    const element = document.body.querySelector(`#${id} .switch-base .switch-circle`);
+    if (element.classList.contains("swith-move")) {
+        element.classList.remove("swith-move");
+        fun(prop1)
     }
-    else{
-      element.classList.add("swith-move");
-      fun(prop2)
+    else {
+        element.classList.add("swith-move");
+        fun(prop2)
     }
-    
-  }
 
-export const cleanResults=(props)=>{
+}
+
+export const cleanResults = (props) => {
     props.setVisible(0);
-    const elementCalc=document.getElementById('icon-anim');
-    elementCalc.classList.remove('icon-exec-ok');
-    elementCalc.classList.add('icon-exec-anim');
-
 }
+export const saveToHistory = (data) => {
+    try {
+        const history = getHistory();
+        const newItem = {
+            id: Date.now(),
+            date: new Date().toLocaleString(),
+            data: data
+        };
+        history.unshift(newItem); // Add to beginning
+        // Limit history to 10 items
+        if (history.length > 10) {
+            history.pop();
+        }
+        sessionStorage.setItem('calcaptoHistory', JSON.stringify(history));
+        return true;
+    } catch (error) {
+        console.error('Error saving to history:', error);
+        return false;
+    }
+};
+
+export const getHistory = () => {
+    try {
+        const history = sessionStorage.getItem('calcaptoHistory');
+        return history ? JSON.parse(history) : [];
+    } catch (error) {
+        console.error('Error reading history:', error);
+        return [];
+    }
+}
+
+export const deleteFromHistory = (id) => {
+    try {
+        const history = getHistory();
+        const updatedHistory = history.filter(item => item.id !== id);
+        sessionStorage.setItem('calcaptoHistory', JSON.stringify(updatedHistory));
+        return true;
+    } catch (error) {
+        console.error('Error deleting from history:', error);
+        return false;
+    }
+};

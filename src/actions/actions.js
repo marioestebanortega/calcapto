@@ -1,44 +1,51 @@
-export const addCreditVals=(payload) =>{
+export const addCreditVals = (payload) => {
     return {
-    type:'CHANGE_CREDIT_VALS',
-    payload
+        type: 'CHANGE_CREDIT_VALS',
+        payload
     }
 }
 
-export const addAddsVals=(payload) =>{
+export const addAddsVals = (payload) => {
     return {
-    type:'ADD_CREDIT_ADDS_VALS',
-    payload
+        type: 'ADD_CREDIT_ADDS_VALS',
+        payload
     }
 }
 
 
-export const calcVals=(payload) =>{
+export const calcVals = (payload) => {
     return {
-    type:'CALC_VALS',
-    payload
+        type: 'CALC_VALS',
+        payload
     }
 
 }
 
 
-export const setVisible=(payload) =>{
+export const setVisible = (payload) => {
     return {
-    type:'SET_VISIBLE',
-    payload
+        type: 'SET_VISIBLE',
+        payload
     }
 }
 
-export const setRateType=(payload) =>{
+export const setRateType = (payload) => {
     return {
-    type:'SET_RATE_TYPE',
-    payload
+        type: 'SET_RATE_TYPE',
+        payload
     }
 }
 
-export const setIsWithIni=(payload) =>{
+export const setIsWithIni = (payload) => {
     return {
-    type:'SET_WITH_INI',
-    payload
+        type: 'SET_WITH_INI',
+        payload
+    }
+}
+
+export const restoreState = (payload) => {
+    return {
+        type: 'RESTORE_STATE',
+        payload
     }
 }

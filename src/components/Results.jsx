@@ -1,78 +1,90 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
+import { saveToHistory } from '../services/calcaptoServices';
 
 
-const Results = (props) =>{
-useEffect(()=>{
-  location.href = "#inits"
-},[])
-  const data=props.data;
-    return (<>
-    <div className="inits" id="inits">
-        <h1>Calculos</h1>
-        <table className="tableData">
-        <tbody>
-          <tr>
-            <th colSpan="2">Crédito hipotecario</th>
-          </tr>
-          <tr>
-            <td>Valor del crédito</td>
-    <td className="vcRight">{data.valCredit}</td>
-          </tr>
-          <tr>
-            <td>Valor de la cuota</td>
-            <td className="vcRight">{data.valAcc}</td>
-          </tr>
-          {props.withAccInit==='yes'?
-          <>
-          <tr>
-            <th colSpan="2">Cuota inicial</th>
-          </tr>
-          <tr>
-            <td>Valor cuota inicial</td>
-            <td className="vcRight">{data.valIni}</td>
-          </tr>
-          <tr>
-            <td>Cantidad de meses de la cuota inicial</td>
-            <td className="vcRight">{data.valMIni}</td>
-          </tr>
-          <tr>
-            <td>Cuota mensual de la inicial</td>
-            <td className="vcRight">{data.valMenIni}</td>
-          </tr>
-          </>:<></>}
-          
-          <tr>
-            <th colSpan="2">Escrituras</th>
-          </tr>
-          <tr>
-            <td>Valor estimado de las escrituras</td>
-            <td className="vcRight">{data.valEscrit}</td>
-          </tr>
-          <tr>
-            <td>Valor estimado del seguro</td>
-            <td className="vcRight">{data.valSeg}</td>
-          </tr>
-          <tr>
-            <td>Valor cuota con seguro</td>
-            <td className="vcRight">{data.valEscritSeg}</td>
-          </tr>
-          </tbody>
-        </table>
+const Results = (props) => {
+  useEffect(() => {
+    location.href = "#inits"
+  }, [])
+  const data = props.data;
+  const fullState = {
+    jCreditForm: props.jCreditForm,
+    jAddValues: props.jAddValues,
+    params: props.params,
+    result: props.data
+  };
+
+  const handleSave = () => {
+    if (saveToHistory(fullState)) {
+      // Dispatch custom event to notify History component
+      window.dispatchEvent(new Event('historyUpdated'));
+    }
+  }
+
+  return (
+    <div className="results-card">
+      <h2>Resultado del Crédito</h2>
+
+      <div className="monthly-payment-section">
+        <div className="monthly-label">Cuota Mensual Estimada</div>
+        <div className="monthly-payment">{data.valAcc}</div>
       </div>
-      </>
-    )
+
+      <div className="breakdown-grid">
+        <div className="breakdown-item">
+          <div className="breakdown-label">Valor del Crédito</div>
+          <div className="breakdown-value">{data.valCredit}</div>
+        </div>
+
+        <div className="breakdown-item">
+          <div className="breakdown-label">Seguro Estimado</div>
+          <div className="breakdown-value">{data.valSeg}</div>
+        </div>
+
+        <div className="breakdown-item">
+          <div className="breakdown-label">Gastos de Escrituración</div>
+          <div className="breakdown-value">{data.valEscrit}</div>
+        </div>
+
+        <div className="breakdown-item">
+          <div className="breakdown-label">Cuota con Seguro</div>
+          <div className="breakdown-value">{data.valEscritSeg}</div>
+        </div>
+
+        {props.withAccInit === 'yes' && (
+          <>
+            <div className="breakdown-item">
+              <div className="breakdown-label">Cuota Inicial Total</div>
+              <div className="breakdown-value">{data.valIni}</div>
+            </div>
+            <div className="breakdown-item">
+              <div className="breakdown-label">Cuota Mensual (Inicial)</div>
+              <div className="breakdown-value">{data.valMenIni}</div>
+            </div>
+          </>
+        )}
+      </div>
+
+      <button className="btn-primary" onClick={handleSave}>
+        Guardar en Historial
+      </button>
+    </div>
+  )
 }
 
-const mapStateToProps=(state)=>{
+const mapStateToProps = (state) => {
 
   return {
-    data:state.result,
-    withAccInit:state.params.withAccInit
+    data: state.result,
+    withAccInit: state.params.withAccInit,
+    jCreditForm: state.jCreditForm,
+    jAddValues: state.jAddValues,
+    params: state.params
   }
 }
 
-const mapActionsToProps={
+const mapActionsToProps = {
 
 }
-export default connect(mapStateToProps,mapActionsToProps) (Results);
+export default connect(mapStateToProps, mapActionsToProps)(Results);
