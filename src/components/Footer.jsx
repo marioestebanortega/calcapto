@@ -3,28 +3,28 @@ import '../assets/styles/components/Footer.css'
 
 
 
-const Footer = ()=>{
-    return (
-        <>
-       <footer className="footer" id="footerPage">
-    <div className="container">
-      <div className="footer-first">
-        <p>
-        <strong><b>CALCAPTO 1.0</b></strong> Copyright © Todos los derechos reservados
-          <img
-           src='/public/images/logoSinNombre.png'
-            alt="" /></p>
-    
-      </div>
-      <div className="footer-second">
-        <p>
-          Implementado por <strong><b>Mario Ortega. </b></strong>
-        </p>
-      </div>
-    </div>
-  </footer>
-        </>
-    )
+const Footer = () => {
+  return (
+    <>
+      <footer className="footer" id="footerPage">
+        <div className="container">
+          <div className="footer-first">
+            <p>
+              <strong><b>CALCAPTO 1.0</b></strong> Copyright © Todos los derechos reservados
+              <img
+                src='/images/logoSinNombre.png'
+                alt="" /></p>
+
+          </div>
+          <div className="footer-second">
+            <p>
+              Implementado por <strong><b>Mario Ortega. </b></strong>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
 }
 
 export default Footer;
