@@ -37,17 +37,41 @@ const History = (props) => {
     return (
         <div className="history-list">
             <h2>Historial</h2>
-            {history.map((item) => (
-                <div key={item.id} className="history-item" onClick={() => handleRestore(item.data)}>
-                    <div className="history-details">
-                        <span className="history-date">{item.date}</span>
-                        <span className="history-amount">{item.data.result ? item.data.result.valAcc : item.data.valAcc}</span>
+            {history.map((item) => {
+                const creditForm = item.data.jCreditForm || {};
+                const result = item.data.result || item.data;
+
+                return (
+                    <div key={item.id} className="history-item" onClick={() => handleRestore(item.data)}>
+                        <div className="history-content">
+                            <div className="history-header">
+                                <span className="history-date">{item.date}</span>
+                                <button className="delete-btn" onClick={(e) => handleDelete(e, item.id)} title="Eliminar">
+                                    ×
+                                </button>
+                            </div>
+                            <div className="history-details-grid">
+                                <div className="history-detail-item">
+                                    <span className="detail-label">Cuota</span>
+                                    <span className="detail-value primary">{result.valAcc}</span>
+                                </div>
+                                <div className="history-detail-item">
+                                    <span className="detail-label">Plazo</span>
+                                    <span className="detail-value">{creditForm.nMonths} meses</span>
+                                </div>
+                                <div className="history-detail-item">
+                                    <span className="detail-label">Tasa</span>
+                                    <span className="detail-value">{creditForm.nRateAn}%</span>
+                                </div>
+                                <div className="history-detail-item">
+                                    <span className="detail-label">Crédito</span>
+                                    <span className="detail-value">{result.valCredit}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button className="delete-btn" onClick={(e) => handleDelete(e, item.id)} title="Eliminar">
-                        ×
-                    </button>
-                </div>
-            ))}
+                );
+            })}
         </div>
     );
 };
